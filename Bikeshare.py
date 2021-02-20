@@ -1,11 +1,13 @@
 # Ahmed Alghamdi
 import time
 import pandas as pd
+
 CITY_DATA = {
     'Chicago': 'chicago.csv',
     'New York City': 'new_york_city.csv',
     'Washington': 'washington.csv'
 }
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -207,14 +209,11 @@ def Raw_Data(df):
         elif raw_data.lower() == 'no':
             print("goodbye :)")
             break
-        # else:
-        #     print('Sorry, I didn\'t catch that.\nTry with [ yes or no ].')
-        #     continue
+
 def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
