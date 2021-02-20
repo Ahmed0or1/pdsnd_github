@@ -7,6 +7,7 @@ Explore US Bikeshare Data
 ### Description
 The project is the idea of browsing the data of three cities: New York, Chicago and Washington city, and  statistical data is extracted using pandas Library.
 <br><br>
+<br>
 1-The first question is to determine the data via the city name.<br>
 2-The second question Determine one month or all months.<br>
 3-The third question is to specify one day or all days of the week,
