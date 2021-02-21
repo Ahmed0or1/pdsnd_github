@@ -3,9 +3,9 @@
 import time
 import pandas as pd
 CITY_DATA = {
-    'Chicago': 'chicago.csv',
-    'New York City': 'new_york_city.csv',
-    'Washington': 'washington.csv'
+    '1': 'chicago.csv',
+    '2': 'new_york_city.csv',
+    '3': 'washington.csv'
 }
 def get_filters():
     """
@@ -20,8 +20,8 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input(
-            "\nWhich city would you like to filter by? \n-chicago  \n-New York City   \n-Washington\n>").title()
-        if city not in ('Chicago', 'New York City', 'Washington'):
+            "\nWhich city would you like to filter by? \n1-chicago  \n2-New York City   \n3-Washington\n>")
+        if city not in ('1', '2', '3'):
             print("Sorry, I didn't catch that. Try again.")
             continue
         else:
