@@ -1,4 +1,5 @@
 # Ahmed Alghamdi
+#git
 import time
 import pandas as pd
 
@@ -7,7 +8,6 @@ CITY_DATA = {
     'New York City': 'new_york_city.csv',
     'Washington': 'washington.csv'
 }
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -192,21 +192,21 @@ def Raw_Data(df):
     show_rows = 5
     rows_start = 0
     rows_end = show_rows - 1
-    raw_data = input('Would you like to see some raw data from the current dataset ? yes | no \n>')
+    raw_data = input('Would you like to see some raw data from the current dataset ? yes | no \n>').title()
     while True:
-        if raw_data not in ['yes','no']:
-            print('Sorry, I didn\'t catch that.\nTry with [ yes or no ]')
-            raw_data = input('Would you like to see some raw data from the current dataset ?\n>')
-        if raw_data.lower() == 'yes':
+        if raw_data not in ['Yes','No']:
+            print('Sorry, I didn\'t catch that.\nTry with [ yes | no ]')
+            raw_data = input('Would you like to see some raw data from the current dataset ?\n>').title()
+        if raw_data.lower() == 'Yes':
             print('\n    Displaying rows {} to {}:'.format(rows_start + 1, rows_end + 1))
             print('\n', df.iloc[rows_start : rows_end + 1])
             rows_start += show_rows
             rows_end += show_rows
-            raw_data = input('Would you like to see the next 5 rows?\n[ yes | no ]>')
-            if raw_data.lower() == 'no':
+            raw_data = input('Would you like to see the next 5 rows?\n[ yes | no ]>').title()
+            if raw_data.lower() == 'No':
                 break
             continue
-        elif raw_data.lower() == 'no':
+        elif raw_data.lower() == 'No':
             print("goodbye :)")
             break
 
@@ -221,10 +221,10 @@ def main():
         Raw_Data(df)
         while True:
             shutdown=0
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
-            if restart.lower() == 'yes':
+            restart = input('\nWould you like to restart? Enter yes or no.\n').title()
+            if restart.lower() == 'Yes':
                 main()
-            elif restart.lower() == 'no':
+            elif restart.lower() == 'No':
                 print("goodbye :)")
                 shutdown=1
                 break
